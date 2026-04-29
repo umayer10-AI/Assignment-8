@@ -1,5 +1,6 @@
+import FormData from '@/component/FormData';
 import { getData } from '@/lib/fetching';
-import { Button } from '@heroui/react';
+import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -13,80 +14,32 @@ const page = async ({params}) => {
     console.log(data)
 
     return (
-        <div>
-            <div className="max-w-6xl mx-auto py-5">
+        <div className="max-w-6xl mx-auto px-6 py-10">
+      <div className="grid md:grid-cols-2 gap-10">
 
-      <Link href="/all-animal">
-        <Button className="text-sm  bg-linear-to-r from-green-500 to-blue-500 flex items-center"><FaArrowLeftLong />Back</Button>
-      </Link>
-
-      <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 bg-white dark:bg-[#0f0f10] shadow-xl rounded-2xl overflow-hidden">
-
-        <div className='flex items-center pl-6'>
-            <div className="relative w-full h-100">
+        <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
+          <div className="relative w-full h-75">
             <Image
-                src={data.image}
-                alt={data.name}
-                fill
-                className="object-cover rounded-2xl"
+              src={data.image}
+              alt={data.name}
+              fill
+              className="object-cover"
             />
-            </div>
-        </div>
-
-        <div className="p-6 space-y-4">
-
-          <h1 className="text-3xl font-bold text-black">
-            {data.name}
-          </h1>
-
-          <p className="text-gray-600">
-            {data.description}
-          </p>
-          <div className="grid grid-cols-2 gap-3 text-sm">
-
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">Type</p>
-              <p className="font-semibold">{data.type}</p>
-            </div>
-
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">Breed</p>
-              <p className="font-semibold">{data.breed}</p>
-            </div>
-
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">Category</p>
-              <p className="font-semibold">{data.category}</p>
-            </div>
-
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">Location</p>
-              <p className="font-semibold">{data.location}</p>
-            </div>
-
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">Age</p>
-              <p className="font-semibold">{data.age} Years</p>
-            </div>
-
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">Weight</p>
-              <p className="font-semibold">{data.weight} KG</p>
-            </div>
           </div>
 
-          <div className="text-2xl font-bold text-green-600">
-            ৳ {data.price.toLocaleString()}
+          <div className="p-6 space-y-3">
+            <h1 className="text-2xl font-bold">{data.name}</h1>
+            <p className="text-gray-600">{data.description}</p>
+
+            <p><b>Category:</b> {data.category}</p>
+            <p><b>Price:</b> <b className='text-green-600 text-xl'>৳{data.price}</b></p>
           </div>
-
-          <button className="w-full bg-linear-to-r from-green-500 to-blue-500 text-white py-3 rounded-xl hover:scale-[1.02] transition">
-            Book Now
-          </button>
-
         </div>
+
+        <FormData  animal={data}></FormData>
+
       </div>
     </div>
-        </div>
     );
 };
 
