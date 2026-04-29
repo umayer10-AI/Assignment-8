@@ -15,7 +15,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
-          <div className="space-y-4">
+          <div className="flex justify-center">
+            <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Image
                 src="/logo.png"
@@ -33,9 +34,11 @@ const Footer = () => {
               easily choose and order animals for Qurbani with trust and convenience.
             </p>
           </div>
+          </div>
 
-          <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
+          <div className="flex justify-center">
+            <div>
+              <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
               About
             </h3>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -55,10 +58,12 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+            </div>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
+          <div className="flex justify-center">
+            <div>
+              <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
               Contact Info
             </h3>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -72,20 +77,22 @@ const Footer = () => {
                 <MdLocationOn /> Dhaka, Bangladesh
               </li>
             </ul>
+            </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-black dark:text-white">
+            <h3 className="text-sm font-semibold text-black dark:text-white text-center">
               Follow Us
             </h3>
 
-            <div className="flex gap-4 text-lg">
+            <div className="flex justify-center gap-4 text-lg">
               <Link href="#"><FaFacebook /></Link>
               <Link href="#"><FaGithub /></Link>
               <Link href="#"><FaLinkedin /></Link>
             </div>
 
-            <Link
+            <div className="flex justify-center">
+              <Link
               href="/signup"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full 
               bg-linear-to-r from-green-500 via-blue-500 to-green-600 text-white 
@@ -93,6 +100,7 @@ const Footer = () => {
             >
               Get Started
             </Link>
+            </div>
           </div>
         </div>
 
