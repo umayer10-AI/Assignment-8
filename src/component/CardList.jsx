@@ -11,7 +11,7 @@ const CardList = ({p}) => {
                 <Image src={p.image} fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className='rounded-xl object-cover' alt='photo'></Image>
-                <Chip size='sm' className='absolute top-2 right-2'>{p.type}</Chip>
+                <Chip size='sm' className='absolute top-2 right-2 px-1'>{p.type}</Chip>
             </div>
             <h2 className='font-bold'>{p.name}</h2>
                 <div className='flex items-center justify-between'>
@@ -19,8 +19,8 @@ const CardList = ({p}) => {
                         <p className='font-semibold'>weight: </p>
                         <p className='font-bold'>{p.weight}KG</p>
                     </div>
-                    <div className='flex items-center gap-2'>
-                        <p className='font-semibold'>Age: </p>
+                    <div className='flex items-center gap-1'>
+                        <p className='font-semibold'>Age:</p>
                         <p className='font-bold'>{p.age}</p>
                     </div>
                 </div>
