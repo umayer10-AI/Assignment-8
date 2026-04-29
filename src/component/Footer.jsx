@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 h-px w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
+        <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
 
         <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
           <p>© {new Date().getFullYear()} QurbaniHat. All rights reserved.</p>
