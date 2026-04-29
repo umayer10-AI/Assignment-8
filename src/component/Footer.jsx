@@ -10,7 +10,6 @@ const Footer = () => {
 
       <div className="absolute inset-0 -z-10 bg-white dark:bg-[#0a0a0b]" />
 
-      {/* Glow */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-purple-500/5 via-transparent to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -35,7 +34,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* About Section */}
           <div>
             <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
               About
@@ -59,7 +57,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
               Contact Info
@@ -77,7 +74,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social + CTA */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-black dark:text-white">
               Follow Us
@@ -92,7 +88,7 @@ const Footer = () => {
             <Link
               href="/signup"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full 
-              bg-gradient-to-r from-green-500 via-blue-500 to-green-600 text-white 
+              bg-linear-to-r from-green-500 via-blue-500 to-green-600 text-white 
               text-sm font-medium hover:scale-[1.02] transition"
             >
               Get Started
@@ -100,10 +96,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="mt-12 h-px w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
 
-        {/* Bottom */}
         <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
           <p>© {new Date().getFullYear()} QurbaniHat. All rights reserved.</p>
 
