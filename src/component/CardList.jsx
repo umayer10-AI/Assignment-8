@@ -1,5 +1,6 @@
-import { Button, Separator } from '@heroui/react';
+import { Button, Chip, Separator } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 
@@ -10,6 +11,7 @@ const CardList = ({p}) => {
                 <Image src={p.image} fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className='rounded-xl object-cover' alt='photo'></Image>
+                <Chip size='sm' className='absolute top-2 right-2'>{p.type}</Chip>
             </div>
             <h2 className='font-bold'>{p.name}</h2>
                 <div className='flex items-center justify-between'>
@@ -26,7 +28,7 @@ const CardList = ({p}) => {
                     <p className='font-semibold'>Price: </p>
                     <p className='font-bold text-green-600 flex items-center'><FaBangladeshiTakaSign />{p.price}</p>
                 </div>
-            <Button className={'bg-linear-to-r from-green-500 via-blue-500 bg-green-500 w-full'}>Details</Button>
+            <Link href={`all-animal/${p.id}`}><Button className={'bg-linear-to-r from-green-500 via-blue-500 bg-green-500 w-full'}>Details</Button></Link>
         </div>
     );
 };
