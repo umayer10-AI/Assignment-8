@@ -14,12 +14,14 @@ const UserIdentify = () => {
             {
                 user? <div className='flex items-center gap-3'>
                     <h2 className='font-semibold hidden lg:flex'>{user?.name}</h2>
-                    <Avatar size='sm'>
-                        <Avatar.Image alt="Umayer Ahmad"
-                        referrerPolicy='no-referrer'
-                        src={user?.image} />
-                        <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
-                    </Avatar>
+                    <Link href={'/profile'}>
+                        <Avatar size='sm'>
+                            <Avatar.Image alt="Umayer Ahmad"
+                            referrerPolicy='no-referrer'
+                            src={user?.image} />
+                            <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                        </Avatar>
+                    </Link>
                     <Button onClick={async() => await authClient.signOut()} size='sm' variant='danger'>Log Out</Button>
                 </div>
                 : <div className='flex gap-2'>

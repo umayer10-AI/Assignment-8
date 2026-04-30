@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { Bounce, toast } from "react-toastify";
 
 const RegisterPage = () => {
 
@@ -26,14 +27,32 @@ const RegisterPage = () => {
             callbackURL: "/",
         });
 
-        console.log({data,error})
-
         if(data){
-          alert("Data Successfully")
           router.push('/')
+          toast.success('Successfully Register', {
+              position: "top-center",
+              autoClose: 500,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+          });
         }
         if(error){
-          alert(error.message)
+          toast.error(`${error.message}`, {
+              position: "top-center",
+              autoClose: 500,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+          });
         }
 
     }
@@ -41,6 +60,17 @@ const RegisterPage = () => {
     const handleGoogle = async () =>{
         const data = await authClient.signIn.social({
             provider: "google",
+        });
+        toast.success('Login Successfully', {
+            position: "top-center",
+            autoClose: 500,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
         });
     }
 

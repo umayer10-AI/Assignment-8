@@ -1,12 +1,23 @@
 "use client"
 import React from 'react';
+import { Bounce, toast } from 'react-toastify';
 
 const FormData = ({animal}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("Booking Confirmed!");
+    toast.success('Booking Confirm Successfully', {
+              position: "top-center",
+              autoClose: 500,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+    });
   };
 
     return (

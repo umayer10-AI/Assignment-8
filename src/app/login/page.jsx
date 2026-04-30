@@ -3,15 +3,18 @@ import { authClient } from "@/lib/auth-client";
 import { Check, Eye, EyeSlash } from "@gravity-ui/icons";
 import { Button, FieldError, Form, Input, InputGroup, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { Bounce, toast } from "react-toastify";
 
 const LoginPage = () => {
 
     const {register,handleSubmit,watch,formState: { errors },} = useForm()
 
     const [isVisible, setIsVisible] = useState(false);
+    const router = useRouter()
 
     const a = async (v) => {
         console.log(v)
@@ -20,16 +23,35 @@ const LoginPage = () => {
             email: v.email,
             password: v.password,
             rememberMe: true,
-            callbackURL: "/",
+            // callbackURL: "/",
         });
 
-        console.log({data,error})
-
         if(data){
-          alert("Data Successfully")
+            router.push('/')
+          toast.success('Successfully Login', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+          });
         }
         if(error){
-          alert(error.message)
+          toast.error(`${error.message}`, {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+          });
         }
 
     }
@@ -37,6 +59,17 @@ const LoginPage = () => {
     const handleGoogle = async () =>{
         const data = await authClient.signIn.social({
             provider: "google",
+        });
+        toast.success('Login Successfully', {
+            position: "top-center",
+            autoClose: 500,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
         });
     }
 

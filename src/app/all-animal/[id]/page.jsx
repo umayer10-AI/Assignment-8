@@ -1,10 +1,7 @@
 import FormData from '@/component/FormData';
 import { getData } from '@/lib/fetching';
-import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
-import { FaArrowLeftLong } from 'react-icons/fa6';
 
 const page = async ({params}) => {
 
