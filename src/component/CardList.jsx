@@ -6,7 +6,7 @@ import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 
 const CardList = ({p}) => {
     return (
-        <div className='p-4 rounded-xl space-y-1.5 shadow-xl'>
+        <div className='p-4 rounded-xl space-y-1.5 hover:scale-105 overflow-hidden transition duration-500 shadow-xl'>
             <div className='relative aspect-square'>
                 <Image src={p.image} fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
