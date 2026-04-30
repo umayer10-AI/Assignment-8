@@ -1,25 +1,22 @@
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import React from "react";
 
 const About = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <div className="pb-10 pt-15">
+      <div className="max-w-6xl mx-auto px-4 py-5 grid md:grid-cols-2 gap-10 items-center shadow-2xl rounded-xl">
         
-        {/* Left Image */}
-        <div className="relative flex justify-center">
+        <div className="flex justify-center">
           <Image
             height={400} width={400}
             src={'/cow.png'}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt="Qurbani Animal"
             className="rounded-2xl shadow-xl"
           />
-          <div className="absolute -bottom-5 -left-5 bg-green-600 text-white px-4 py-2 rounded-xl shadow-lg">
-            Trusted Since 2024
-          </div>
         </div>
 
-        {/* Right Content */}
         <div>
           <h2 className="text-4xl font-bold mb-4">
             About Our Qurbani Service
@@ -37,8 +34,7 @@ const About = () => {
             care and hygiene.
           </p>
 
-          {/* Features */}
-          <div className="space-y-3">
+          <div className="space-y-3 font-semibold">
             <p className="flex items-center gap-2 text-gray-700">
               ✅ Verified & healthy animals
             </p>
@@ -50,14 +46,13 @@ const About = () => {
             </p>
           </div>
 
-          {/* Button */}
-          <button className="mt-6 px-6 py-3 bg-green-600 text-white rounded-xl shadow hover:bg-green-700 transition">
+          <Button className="mt-6 h-12 bg-linear-to-r from-green-500 to-blue-500 rounded-xl shadow hover:bg-green-700 transition">
             Learn More
-          </button>
+          </Button>
         </div>
 
       </div>
-    </section>
+    </div>
   );
 };
 
