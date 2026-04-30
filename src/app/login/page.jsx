@@ -34,6 +34,12 @@ const LoginPage = () => {
 
     }
 
+    const handleGoogle = async () =>{
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
+
   return (
     <div className="flex justify-center">
       <Form className="flex w-80 shadow border lg:w-100 p-5 mt-10 rounded-xl flex-col gap-4" onSubmit={handleSubmit(a)}>
@@ -88,7 +94,7 @@ const LoginPage = () => {
 
         </div>
         <h2 className="text-center">Or</h2>
-        <Button variant="outline" className={'w-full shadow'}><FcGoogle />Sign In With Google</Button>
+        <Button onClick={handleGoogle} variant="outline" className={'w-full shadow'}><FcGoogle />Sign In With Google</Button>
         <h2 className="font-semibold text-center text-sm mt-3">Don’t Have An Account? <Link href={'/register'} className="text-red-600">Register</Link></h2>
         </div>
       </Form>
