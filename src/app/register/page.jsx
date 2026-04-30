@@ -1,6 +1,7 @@
 "use client"
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
@@ -15,7 +16,7 @@ const SignUpPage = () => {
 
   return (
     <div className="flex justify-center">
-      <Form className="flex w-80 shadow border lg:w-100 p-5 mt-10 rounded-xl flex-col gap-4" onSubmit={handleSubmit(a)}>
+      <Form className="flex w-80 shadow border lg:w-100 p-5 mt-5 rounded-xl flex-col gap-4" onSubmit={handleSubmit(a)}>
 
         <TextField
             isRequired
@@ -98,6 +99,7 @@ const SignUpPage = () => {
             Reset
           </Button>
         </div>
+        <h2 className="font-semibold text-center">Already have an account? <Link href={'/login'} className="text-blue-600">Login</Link></h2>
         <h2 className="text-center font-semibold">Or</h2>
         <Button variant="outline" className={'w-full shadow'}><FcGoogle />Sign In With Google</Button>
         </div>
