@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const Breeds = () => {
   const breeds = [
-    { name: "Sahiwal", type: "Cow", img: "https://images.unsplash.com/photo-1551606712-b0341396cc87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVsbHxlbnwwfHwwfHx8MA%3D%3D" },
-    { name: "Brahman", type: "Cow", img: "https://images.unsplash.com/photo-1551606712-b0341396cc87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVsbHxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "Sahiwal", type: "Cow", img: "https://images.unsplash.com/photo-1618080206739-14e8ac105472?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y293fGVufDB8fDB8fHww" },
+    { name: "Brahman", type: "Cow", img: "https://images.unsplash.com/photo-1484729191033-ab703f3eac3a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGNvd3xlbnwwfHwwfHx8MA%3D%3D" },
     { name: "Deshi Bull", type: "Bull", img: "https://images.unsplash.com/photo-1551606712-b0341396cc87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVsbHxlbnwwfHwwfHx8MA%3D%3D" },
-    { name: "Black Bengal", type: "Goat", img: "https://images.unsplash.com/photo-1551606712-b0341396cc87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVsbHxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "Black Bengal", type: "Goat", img: "https://images.unsplash.com/photo-1559203544-e4b02d061343?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGdvYXR8ZW58MHx8MHx8fDA%3D" },
   ];
 
   return (
@@ -24,7 +25,7 @@ const Breeds = () => {
         {/* Simple Grid */}
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
 
-          {breeds.map((v, i) => (
+          {breeds.map((v,i) => (
             <div key={i} className="flex rounded-xl border bg-white shadow-xl py-5 flex-col items-center text-center">
 
               {/* Image only (no card) */}
