@@ -17,13 +17,9 @@ const Footer = () => {
 
           <div className="flex justify-center">
             <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="logo"
-                width={32}
-                height={32}
-              />
+            <div className="flex items-center gap-1">
+
+              <h2 className="text-4xl">🐄</h2>
               <h2 className="text-xl font-semibold text-black dark:text-white">
                 QurbaniHat
               </h2>
