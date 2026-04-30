@@ -1,8 +1,9 @@
 "use client"
-import { Check } from "@gravity-ui/icons";
-import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
+import { Check, Eye, EyeSlash } from "@gravity-ui/icons";
+import { Button, Description, FieldError, Form, Input, InputGroup, Label, TextField } from "@heroui/react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 
@@ -10,8 +11,28 @@ const SignUpPage = () => {
 
     const {register,handleSubmit,watch,formState: { errors },} = useForm()
 
-    const a = (v) => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    const a = async (v) => {
         console.log(v)
+
+        const { data, error } = await authClient.signUp.email({
+            name: v.name,
+            email: v.email,
+            password: v.password,
+            image: v.url,
+            callbackURL: "/",
+        });
+
+        console.log({data,error})
+
+        if(data){
+          alert("Data Successfully")
+        }
+        if(error){
+          alert(error.message)
+        }
+
     }
 
   return (
@@ -29,7 +50,7 @@ const SignUpPage = () => {
             }}
           >
             <Label>Name</Label>
-            <Input placeholder="Enter your name" {...register("name")}/>
+            <Input placeholder="Enter your name" {...register("name", { required: true })}/>
             <FieldError />
           </TextField>
 
@@ -44,7 +65,7 @@ const SignUpPage = () => {
             }}
           >
             <Label>Photo URL</Label>
-            <Input placeholder="Enter your URL" {...register("url")}/>
+            <Input placeholder="Enter your URL" {...register("url", { required: true })}/>
             <FieldError />
           </TextField>
 
@@ -60,35 +81,33 @@ const SignUpPage = () => {
           }}
         >
           <Label>Email</Label>
-          <Input placeholder="john@example.com" {...register("email")}/>  
+          <Input placeholder="john@example.com" {...register("email", { required: true })}/>  
           <FieldError />
         </TextField>
-        <TextField
-          isRequired
-          minLength={8}
-          name="password"
-          type="password"
-          validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-            return null;
-          }}
-        >
-          <Label>Password</Label>
-          <Input placeholder="Enter your password" {...register("password")}/>
-          
-          <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
-          </Description>
-          <FieldError />
-        </TextField>
+
+        <TextField className="w-full" name="password">
+      <Label>Password</Label>
+      <InputGroup>
+        <InputGroup.Input
+          className="w-full"
+          type={isVisible ? "text" : "password"}
+          {...register("password", { required: true })}
+           placeholder="Enter your password"
+        />
+        <InputGroup.Suffix className="pr-0">
+          <Button
+            isIconOnly
+            aria-label={isVisible ? "Hide password" : "Show password"}
+            size="sm"
+            variant="ghost"
+            onPress={() => setIsVisible(!isVisible)}
+          >
+            {isVisible ? <Eye className="size-4" /> : <EyeSlash className="size-4" />}
+          </Button>
+        </InputGroup.Suffix>
+      </InputGroup>
+    </TextField>
+
         <div className="space-y-2">
             <div className="flex gap-2 justify-center">
           <Button className={"bg-linear-to-r from-green-500 via-blue-500 to-green-500"} type="submit">
