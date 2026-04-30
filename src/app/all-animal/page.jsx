@@ -1,4 +1,4 @@
-import CardList from '@/component/CardList';
+import AllCards from '@/component/AllCards';
 import SortedList from '@/component/SortedList';
 import { getData } from '@/lib/fetching';
 import React from 'react';
@@ -6,7 +6,6 @@ import React from 'react';
 const page = async () => {
 
     const data = await getData()
-    console.log(data)
 
     return (
         <div>
@@ -14,11 +13,7 @@ const page = async () => {
             <div className='flex justify-center mb-2'>
                 <SortedList></SortedList>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
-                {
-                    data.map(v => <CardList key={v.id} p={v}></CardList>)
-                }
-            </div>
+            <AllCards data={data}></AllCards>
         </div>
     );
 };

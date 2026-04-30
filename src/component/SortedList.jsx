@@ -1,7 +1,12 @@
-import React from 'react';
+"use client"
+import React, { useContext } from 'react';
 import {Label, ListBox, Select} from "@heroui/react";
+import { Data } from '@/context/Context';
 
 const SortedList = () => {
+
+    const {setS} = useContext(Data)
+
     return (
         <div>
             <Select className="w-[256px]" placeholder="Select one">
@@ -12,15 +17,15 @@ const SortedList = () => {
       </Select.Trigger>
       <Select.Popover>
         <ListBox>
-          <ListBox.Item id="default" textValue="Default">
+          <ListBox.Item onClick={() => setS("default")} id="default" textValue="Default">
             Default
             <ListBox.ItemIndicator />
           </ListBox.Item>
-          <ListBox.Item id="low" textValue="Low to High">
+          <ListBox.Item onClick={() => setS("low")} id="low" textValue="Low to High">
             Low to High
             <ListBox.ItemIndicator />
           </ListBox.Item>
-          <ListBox.Item id="high" textValue="High to Low">
+          <ListBox.Item onClick={() => setS("high")} id="high" textValue="High to Low">
             High to Low
             <ListBox.ItemIndicator />
           </ListBox.Item>
