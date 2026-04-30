@@ -5,6 +5,7 @@ import Footer from "@/component/Footer";
 import { ToastContainer } from "react-toastify";
 import Providers from "@/lib/providers/page";
 import 'animate.css';
+import SmoothScroll from "@/component/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <SmoothScroll></SmoothScroll>
         <Navbar></Navbar>
         <Providers>
           <main className="w-[90%] mx-auto">{children}</main>
