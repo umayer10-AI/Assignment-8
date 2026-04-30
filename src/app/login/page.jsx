@@ -1,7 +1,7 @@
 "use client"
 import { authClient } from "@/lib/auth-client";
 import { Check, Eye, EyeSlash } from "@gravity-ui/icons";
-import { Button, Description, FieldError, Form, Input, InputGroup, Label, TextField } from "@heroui/react";
+import { Button, FieldError, Form, Input, InputGroup, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,11 +16,10 @@ const LoginPage = () => {
     const a = async (v) => {
         console.log(v)
 
-        const { data, error } = await authClient.signUp.email({
-            name: v.name,
+        const { data, error } = await authClient.signIn.email({
             email: v.email,
             password: v.password,
-            image: v.url,
+            rememberMe: true,
             callbackURL: "/",
         });
 

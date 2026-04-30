@@ -3,6 +3,7 @@ import { authClient } from "@/lib/auth-client";
 import { Check, Eye, EyeSlash } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, InputGroup, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
@@ -12,6 +13,7 @@ const RegisterPage = () => {
     const {register,handleSubmit,watch,formState: { errors },} = useForm()
 
     const [isVisible, setIsVisible] = useState(false);
+    const router = useRouter()
 
     const a = async (v) => {
         console.log(v)
@@ -28,6 +30,7 @@ const RegisterPage = () => {
 
         if(data){
           alert("Data Successfully")
+          router.push('/')
         }
         if(error){
           alert(error.message)
@@ -39,6 +42,7 @@ const RegisterPage = () => {
     <div className="flex justify-center">
       <Form className="flex w-80 shadow border lg:w-100 p-5 mt-5 rounded-xl flex-col gap-4" onSubmit={handleSubmit(a)}>
 
+        <h2 className="text-2xl font-bold text-center">Register your account</h2>
         <TextField
             isRequired
             name="name"
