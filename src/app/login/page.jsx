@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 
-const RegisterPage = () => {
+const LoginPage = () => {
 
     const {register,handleSubmit,watch,formState: { errors },} = useForm()
 
@@ -37,37 +37,9 @@ const RegisterPage = () => {
 
   return (
     <div className="flex justify-center">
-      <Form className="flex w-80 shadow border lg:w-100 p-5 mt-5 rounded-xl flex-col gap-4" onSubmit={handleSubmit(a)}>
+      <Form className="flex w-80 shadow border lg:w-100 p-5 mt-10 rounded-xl flex-col gap-4" onSubmit={handleSubmit(a)}>
+        <h2 className="text-2xl font-bold text-center">Login</h2>
 
-        <TextField
-            isRequired
-            name="name"
-            validate={(value) => {
-              if (value.length < 3) {
-                return "Name must be at least 3 characters";
-              }
-              return null;
-            }}
-          >
-            <Label>Name</Label>
-            <Input placeholder="Enter your name" {...register("name", { required: true })}/>
-            <FieldError />
-          </TextField>
-
-        <TextField
-            isRequired
-            name="url"
-            validate={(value) => {
-              if (value.length < 3) {
-                return "Name must be at least 3 characters";
-              }
-              return null;
-            }}
-          >
-            <Label>Photo URL</Label>
-            <Input placeholder="Enter your URL" {...register("url", { required: true })}/>
-            <FieldError />
-          </TextField>
 
         <TextField
           isRequired
@@ -108,25 +80,21 @@ const RegisterPage = () => {
       </InputGroup>
     </TextField>
 
-        <div className="space-y-2">
+        <div className="space-y-1 mt-2">
             <div className="flex gap-2 justify-center">
-          <Button className={"bg-linear-to-r from-green-500 via-blue-500 to-green-500"} type="submit">
+          <Button className={"bg-linear-to-r from-green-500 via-blue-500 to-green-500 w-full"} type="submit">
             <Check />
-            Register
+            Login
           </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+
         </div>
-        <div className="mt-4 space-y-1">
-            <h2 className="font-semibold text-center text-sm">Already have an account? <Link href={'/login'} className="text-blue-600">Login</Link></h2>
-          <h2 className="text-center">Or</h2>
-          <Button variant="outline" className={'w-full shadow'}><FcGoogle />Sign In With Google</Button>
-        </div>
+        <h2 className="text-center">Or</h2>
+        <Button variant="outline" className={'w-full shadow'}><FcGoogle />Sign In With Google</Button>
+        <h2 className="font-semibold text-center text-sm mt-3">Don’t Have An Account? <Link href={'/register'} className="text-red-600">Register</Link></h2>
         </div>
       </Form>
     </div>
   );
 };
 
-export default RegisterPage;
+export default LoginPage;
