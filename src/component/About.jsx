@@ -4,16 +4,16 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="pb-10 pt-15">
-      <div className="max-w-6xl mx-auto px-4 py-5 grid md:grid-cols-2 gap-10 items-center shadow-2xl rounded-xl">
+    <div className="mb-10 mt-15">
+      <div className="max-w-6xl group mx-auto px-4 py-8 grid md:grid-cols-2 gap-10 items-center shadow-2xl rounded-xl">
         
-        <div className="flex justify-center">
+        <div className="flex justify-center rounded-2xl">
           <Image
             height={400} width={400}
-            src={'/cow.png'}
+            src={'/my.jpg'}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt="Qurbani Animal"
-            className="rounded-2xl shadow-xl"
+            className="rounded-2xl shadow-xl group-hover:scale-105 transition duration-500"
           />
         </div>
 
