@@ -1,9 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
 import NavLink from './NavLink';
+import { Button } from '@heroui/react';
+import { authClient } from '@/lib/auth-client';
+import UserIdentify from './UserIdentify';
 
 const Navbar = () => {
-
+    
     return (
         <div className='border-b'>
             <div className='py-3 w-[90%] mx-auto flex items-center justify-between'>
@@ -12,10 +15,9 @@ const Navbar = () => {
                     <h2 className='text-xl font-bold'>QurbaniHat</h2>
                 </div>
                 <NavLink></NavLink>
-                <div className='flex'>
-                    <button>Register</button>
-                    <button>Login</button>
-                </div>
+
+                <UserIdentify></UserIdentify>
+                
             </div>
         </div>
     );
