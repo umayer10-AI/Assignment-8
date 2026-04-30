@@ -12,30 +12,19 @@ const SortedList = () => {
       </Select.Trigger>
       <Select.Popover>
         <ListBox>
-          <ListBox.Item id="florida" textValue="Florida">
-            Florida
+          <ListBox.Item id="default" textValue="Default">
+            Default
             <ListBox.ItemIndicator />
           </ListBox.Item>
-          <ListBox.Item id="delaware" textValue="Delaware">
-            Delaware
+          <ListBox.Item id="low" textValue="Low to High">
+            Low to High
             <ListBox.ItemIndicator />
           </ListBox.Item>
-          <ListBox.Item id="california" textValue="California">
-            California
+          <ListBox.Item id="high" textValue="High to Low">
+            High to Low
             <ListBox.ItemIndicator />
           </ListBox.Item>
-          <ListBox.Item id="texas" textValue="Texas">
-            Texas
-            <ListBox.ItemIndicator />
-          </ListBox.Item>
-          <ListBox.Item id="new-york" textValue="New York">
-            New York
-            <ListBox.ItemIndicator />
-          </ListBox.Item>
-          <ListBox.Item id="washington" textValue="Washington">
-            Washington
-            <ListBox.ItemIndicator />
-          </ListBox.Item>
+
         </ListBox>
       </Select.Popover>
     </Select>
