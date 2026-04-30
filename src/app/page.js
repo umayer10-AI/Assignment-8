@@ -1,5 +1,6 @@
 import Banner from '@/component/Banner';
 import HomeCarts from '@/component/HomeCarts';
+import Tips from '@/component/Tips';
 import React from 'react';
 
 const page = () => {
@@ -7,6 +8,7 @@ const page = () => {
     <div>
       <Banner></Banner>
       <HomeCarts></HomeCarts>
+      <Tips></Tips>
     </div>
   );
 };
