@@ -8,7 +8,7 @@ import UserIdentify from './UserIdentify';
 const Navbar = () => {
     
     return (
-        <div className='border-b'>
+        <div className='border-b sticky top-0 bg-white z-50'>
             <div className='py-3 w-[90%] mx-auto flex items-center justify-between'>
                 <div className='flex items-center gap-2'>
                     <Image className='rounded-full' height={35} width={35} src={'/logo.png'} alt='cow'></Image>
