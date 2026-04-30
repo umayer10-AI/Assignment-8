@@ -10,7 +10,7 @@ const page = () => {
   console.log(user);
 
   return (
-    <div className="flex justify-center mt-5">
+    <div className="flex justify-center mt-10">
       <div className="border w-80 rounded-xl text-center py-5 space-y-3">
         <Avatar className="h-20 w-20 mx-auto">
           <Avatar.Image
@@ -18,7 +18,7 @@ const page = () => {
             referrerPolicy="no-referrer"
             src={user?.image}
           />
-          <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+          <Avatar.Fallback className="text-3xl">{user?.name.charAt(0)}</Avatar.Fallback>
         </Avatar>
         <h2 className="font-bold text-xl">{user?.name}</h2>
         <h2 className="text-muted">{user?.email}</h2>

@@ -15,8 +15,8 @@ const ModalTask = () => {
         const image = e.target.url.value
         
         await authClient.updateUser({
-            image: "https://example.com/image.jpg",
-            name: "John Doe",
+            image,
+            name,
         })
     }
 
