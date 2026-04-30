@@ -4,6 +4,7 @@ import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import { ToastContainer } from "react-toastify";
 import Providers from "@/lib/providers/page";
+import 'animate.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
