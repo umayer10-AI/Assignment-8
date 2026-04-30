@@ -25,8 +25,8 @@ const UserIdentify = () => {
                     <Button onClick={async() => await authClient.signOut()} size='sm' variant='danger'>Log Out</Button>
                 </div>
                 : <div className='flex gap-2'>
-                    <Link href={'/register'}><Button className={'bg-linear-to-r from-blue-500 to-green-500'}>Register</Button></Link>
-                    <Link href={'/login'}><Button variant='secondary'>Login</Button></Link>
+                    <Link href={'/register'}><Button size='sm' className={'bg-linear-to-r from-blue-500 to-green-500'}>Register</Button></Link>
+                    <Link href={'/login'}><Button size='sm' variant='secondary'>Login</Button></Link>
                 </div>
             }
         </div>

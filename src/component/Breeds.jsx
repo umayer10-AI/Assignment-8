@@ -21,27 +21,30 @@ const Breeds = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <Marquee>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
 
-          {breeds.map((v,i) => (
-            <div key={i} className="flex rounded-xl border bg-white shadow-xl py-5 flex-col items-center text-center">
+          {
+            breeds.map((v,i) => (
+                <div key={i} className="flex rounded-xl w-60 border bg-white shadow-xl py-5 flex-col items-center text-center">
 
-              <div className="overflow-hidden rounded-full w-28 h-28 md:w-32 md:h-32">
-                <Image
-                  src={v.img}
-                  alt={v.name}
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <h3 className="mt-3 text-lg font-semibold">{v.name}</h3>
-              <p className="text-sm text-gray-500">{v.type}</p>
+                <div className="overflow-hidden rounded-full w-28 h-28 md:w-32 md:h-32">
+                    <Image
+                    src={v.img}
+                    alt={v.name}
+                    width={200}
+                    height={200}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                </div>
+                <h3 className="mt-3 text-lg font-semibold">{v.name}</h3>
+                <p className="text-sm text-gray-500">{v.type}</p>
 
-            </div>
+                </div>
           ))}
 
         </div>
+        </Marquee>
       </div>
     </section>
   );
