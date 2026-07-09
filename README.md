@@ -11,6 +11,66 @@ It helps users easily browse, select, and book healthy animals for Qurbani with 
 
 ---
 
+## Screenshot
+
+<img width="954" height="452" alt="image" src="https://github.com/user-attachments/assets/a26f2491-c466-435f-8042-1551fe054abe" />
+
+
+---
+
+## 🚀 Run Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/umayer10-AI/Qurbani-Hub.git
+```
+
+### 2. Navigate to the Project Folder
+
+```bash
+cd qurbanihat
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Create a `.env.local` File
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+
+BETTER_AUTH_SECRET=your_secret
+BETTER_AUTH_URL=http://localhost:3000
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+### 5. Run the Development Server
+
+```bash
+npm run dev
+```
+
+Open your browser and visit:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🔗 Resources
+
+- 🌐 **Live Site:** https://assignment-8-virid.vercel.app
+- 💻 **Repository:** https://github.com/your-username/qurbanihat
+
+---
+
 ## ✨ Key Features
 
 - 🔐 User Authentication (Email & Google Login) using Better Auth
